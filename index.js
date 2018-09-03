@@ -44,8 +44,8 @@ const CacheStore = {
     }
   },
 
-  remove(key){
-    return AsyncStorage.multiRemove([CACHE_EXPIRATION_PREFIX + key, CACHE_PREFIX + key]);
+  async remove(key){
+    return await AsyncStorage.multiRemove([CACHE_EXPIRATION_PREFIX + key, CACHE_PREFIX + key]);
   },
 
   isExpired(key){
